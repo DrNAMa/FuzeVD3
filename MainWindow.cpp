@@ -79,7 +79,7 @@ void MainWindow::on_download_button_clicked() {
         this->invoke_ytdlp +
         " --progress-delta 0.73"
         // " --progress-template [progress] %(info.id)s_%(progress._percent)s_%(progress._speed_str)s_%(progress.eta)s";
-        " --progress-template [progress]+%(info.id)s+%(progress._percent)s+%(progress._speed_str)s";
+        " --progress-template [progress]+%(info.id)s+%(progress._percent)s+%(progress._speed_str)s -o \"%(title).60s [%(id)s].%(ext)s\" ";
 
     // Determine format
     Format format = this->formats.at(ui->format_combobox->currentText());
