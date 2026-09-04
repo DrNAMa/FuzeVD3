@@ -232,15 +232,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.hpp" />
+    <ClInclude Include="resource.h" />
     <QtMoc Include="MainWindow.hpp" />
     <QtMoc Include="RunCommand.hpp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ResourceCompile Include="FuzeVD3.rc" />
+  </ItemGroup>
   <ItemGroup>
     <QtUic Include="MainWindow.ui" />
   </ItemGroup>
   <ItemGroup>
     <None Include="yt-dlp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Image2Ico\Image2Ico\bin\Debug\net10.0-windows\ConvertedIcos\output_20260904_102036.ico">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Resource.qrc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
