@@ -5,7 +5,7 @@
 #include <QFileDialog>
 #include <QThread>
 #include <QScrollBar>
-
+#include <QIcon>
 
 // ------ GLOBAL ------
 
@@ -32,8 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->embed_metadata_checkbox->setCheckState(
         this->settings.value("embed_metadata").toBool() ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
     ui->save_location_input->setText(this->settings.value("save_location").toString());
-
-    controller->addPattern(printProgress, "[progress]", std::string(""), (int)0, std::string(""));
+    controller->addPattern(printProgress, "[progress]", std::string(""), (int)0, std::string("")); 
 }
 
 MainWindow::~MainWindow() {
