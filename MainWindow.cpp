@@ -6,6 +6,7 @@
 #include <QThread>
 #include <QScrollBar>
 #include <QIcon>
+#include <QSettings>
 
 // ------ GLOBAL ------
 
@@ -33,6 +34,19 @@ MainWindow::MainWindow(QWidget *parent)
         this->settings.value("embed_metadata").toBool() ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
     ui->save_location_input->setText(this->settings.value("save_location").toString());
     controller->addPattern(printProgress, "[progress]", std::string(""), (int)0, std::string("")); 
+    // Connect the signal to save instantly on change
+    connect(ui->format_combobox, &QComboBox::currentIndexChanged, [](int newIndex) {
+        QSettings settings("MyOrganizationName", "MyProjectName");
+        settings.setValue("savedComboIndex", newIndex);
+        });
+    // Load the setting
+    QSettings settings("MyOrganizationName", "MyProjectName");
+
+    // Read the value, defaulting to 0 if it doesn't exist yet
+    int lastIndex = settings.value("savedComboIndex", 0).toInt();
+
+    // Apply it to your combobox
+    ui->format_combobox->setCurrentIndex(lastIndex);
 }
 
 MainWindow::~MainWindow() {

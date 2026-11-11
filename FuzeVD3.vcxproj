@@ -229,10 +229,12 @@
   <ItemGroup>
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.hpp" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Settings.hpp" />
     <QtMoc Include="MainWindow.hpp" />
     <QtMoc Include="RunCommand.hpp" />
   </ItemGroup>

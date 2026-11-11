@@ -14,8 +14,8 @@
    <string>FuzeVD 3.0.0</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>00043-35923215719.png</normaloff>00043-35923215719.png</iconset>
+   <iconset resource="Resource.qrc">
+    <normaloff>:/new/prefix1/00043-35923215719.png</normaloff>:/new/prefix1/00043-35923215719.png</iconset>
   </property>
   <property name="tabShape">
    <enum>QTabWidget::Rounded</enum>
